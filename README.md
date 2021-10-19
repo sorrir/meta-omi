@@ -1,6 +1,6 @@
 # meta-omi
 
-An OpenEmbedded Layer that provides recipes configure and network and mender access. This is heavily opinionated and use-case specific. There are no configuration interfaces intended to be be used in a `local.conf`. This rather acts as a base that should be edited directly.
+An OpenEmbedded Layer that provides recipes to configure network, users and mender access. This is heavily opinionated and use-case specific. There are no configuration interfaces intended to be be used in a `local.conf`. This rather acts as a base that should be edited directly.
 
 ## Layer dependencies
 
@@ -38,7 +38,7 @@ Creates a user called "omi" with the public keys listed in [authorized_keys](rec
 * requires mender
 * sets the central mender server endpoint and certificate
 * Edit [server.crt](recipes-mender/mender/files/server.crt) with your mender certificate
-* Edit [mender_%.bbappend](recipes-mender/mender/mender_%.bbappend) to set your mender endpoint and configuration
+* Edit [mender_%.bbappend](recipes-mender/mender/mender_%25.bbappend) to set your mender endpoint and configuration
 
 ### recipes-core
 
@@ -51,4 +51,5 @@ This generic bbappend enables dhcp on common interface names.
 This makes sure `networkd resolved polkit` are installend
 
 #### dropbear bbappend
+
 This configures the ssh server. Specifically, it disables password logins.
